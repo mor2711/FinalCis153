@@ -2,21 +2,6 @@ import tkinter as tk
 from tkinter import *
 list = []
 def chart(pieces,order):
-    def convert():
-        counter2 = 0
-        while counter1 > 0:
-            a = e1.grid(row=3 + counter2,column=1) * 39.37
-            b = e2.grid(row=4 + counter2,column=1) * 39.37
-            c = e3.grid(row=5 + counter2,column=1) * 39.37
-            d = e4.grid(row=6 + counter2,column=1) * 2.205
-            file1 = open(shipments,"a")
-            file1.writelines("Order Number {} Piece number {} Length {} Width {} Heigth {} Weigth {}"+ "\n".format(float(a),float(b),float(c),float(d)))
-            file1.close
-            chart.counter1= chart.counter1 - 1
-            counter2 = counter2 + 4
-        return;
-    counter1 = 1
-    counter2 = 0
     while pieces > 0:
         Label(Converter,text="piece {} length".format(counter1)).grid(row=3 + counter2,column=0)
         Label(Converter,text="piece {} width".format(counter1)).grid(row=4 + counter2,column=0)
@@ -26,14 +11,14 @@ def chart(pieces,order):
         width= DoubleVar()
         heigth= DoubleVar()
         weigth= DoubleVar()
-        e1 = Entry(Converter,textvariable=length)
-        e2 = Entry(Converter,textvariable=width)
-        e3 = Entry(Converter,textvariable=heigth)
-        e4 = Entry(Converter,textvariable=weigth)
-        e1.grid(row=3 + counter2,column=1)
-        e2.grid(row=4 + counter2,column=1)
-        e3.grid(row=5 + counter2,column=1)
-        e4.grid(row=6 + counter2,column=1)
+        e1.append(counter1) = Entry(Converter,textvariable=length)
+        e2.append(counter1) = Entry(Converter,textvariable=width)
+        e3.append(counter1) = Entry(Converter,textvariable=heigth)
+        e4.append(counter1) = Entry(Converter,textvariable=weigth)
+        e1.append(counter1).grid(row=3 + counter2,column=1)
+        e2.append(counter1).grid(row=4 + counter2,column=1)
+        e3.append(counter1).grid(row=5 + counter2,column=1)
+        e4.append(counter1).grid(row=6 + counter2,column=1)
 
         pieces = pieces -1
         counter1 = counter1 + 1

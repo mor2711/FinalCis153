@@ -1,0 +1,6 @@
+
+Order Number 27007550 Date Apr-18-2020 Piece 1 measures 39.37 x 78.74 x 118.10999999999999 meters and kgs 2.205 lbs
+Order Number 27007550 Date Apr-18-2020 Piece 2 measures 157.48 x 196.85 x 236.21999999999997 meters and kgs 4.41 lbs
+Order Number 27008990 Date Apr-18-2020 Piece 1 measures 0.0254 x 0.0508 x 0.07619999999999999 meters and kgs 0.45359237 lbs
+Order Number 27008990 Date Apr-18-2020 Piece 2 measures 0.1016 x 0.127 x 0.15239999999999998 meters and kgs 0.90718474 lbs
+Order Number 27008990 Date Apr-18-2020 Piece 3 measures 0.17779999999999999 x 0.2032 x 0.2286 meters and kgs 1.3607771100000001 lbs

@@ -1,5 +1,9 @@
+from datetime import date
 def meterstoinches():
+    order_number = input("What is the order number?")
     number_of_pieces = input("How many pieces are in the shipment?")
+    today = date.today()
+    d = today.strftime("%b-%d-%Y")
     counter = 1
     while int(number_of_pieces) > 0:
         lengthm = input("What is the length in meters for piece {} ?".format(counter))
@@ -10,6 +14,9 @@ def meterstoinches():
         heightin = float(heightm) * 39.37
         weightkg = input("What is the weight in kgs for piece {} ?".format(counter))
         weightlb = float(weightkg) * 2.205
+        file1 = open("shipment_log.txt","a")
+        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and kgs {} lbs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
+        file1.close()
         print("Piece {} measures {} x {} x {} inches and weighs {} lbs".format(counter,lengthin,widthin,heightin,weightlb))
         number_of_pieces = int(number_of_pieces) - 1
         counter = counter + 1
@@ -17,7 +24,10 @@ def meterstoinches():
 # meterstoinches()
 
 def ustometric():
+    order_number = input("What is the order number?")
     number_of_pieces = input("How many pieces are in the shipment?")
+    today = date.today()
+    d = today.strftime("%b-%d-%Y")
     counter = 1
     while int(number_of_pieces) > 0:
         lengthm = input("What is the length in meters for piece {} ?".format(counter))
@@ -28,10 +38,28 @@ def ustometric():
         heightin = float(heightm) * .0254
         weightkg = input("What is the weight in kgs for piece {} ?".format(counter))
         weightlb = float(weightkg) * .45359237
+        file1 = open("shipment_log.txt","a")
+        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and kgs {} lbs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
+        file1.close()
         print("Piece {} measures {} x {} x {} meters and kgs {} lbs".format(counter,lengthin,widthin,heightin,weightlb))
         number_of_pieces = int(number_of_pieces) - 1
         counter = counter + 1
     return;
-ustometric()
+# ustometric()
 
-
+answer = int(input("What would you like to do? \n Enter 1 to convert Metric to US. \n Enter 2 to convert US to Metric. \n Enter 3 to view shipment log. \n Enter 4 to search shipment log."))
+if answer == 1:
+    meterstoinches()
+if answer == 2:
+    ustometric()
+if answer == 3:
+    file1 = open("shipment_log.txt","r")
+    for line in file1.readlines():
+        print(str(line))
+        file1.close()
+if answer == 4:
+    file1 = open("shipment_log.txt","r")
+    searchterm = input("Enter an order number or date in the following format Jan-1-2020")
+    for line in file1.readlines():
+        if line.__contains__(searchterm):
+            print(line)
