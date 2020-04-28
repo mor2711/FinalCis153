@@ -15,7 +15,7 @@ def meterstoinches():
         weightkg = input("What is the weight in kgs for piece {} ?".format(counter))
         weightlb = float(weightkg) * 2.205
         file1 = open("shipment_log.txt","a")
-        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and kgs {} lbs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
+        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} inches and {} lbs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
         file1.close()
         print("Piece {} measures {} x {} x {} inches and weighs {} lbs".format(counter,lengthin,widthin,heightin,weightlb))
         number_of_pieces = int(number_of_pieces) - 1
@@ -39,7 +39,7 @@ def ustometric():
         weightkg = input("What is the weight in kgs for piece {} ?".format(counter))
         weightlb = float(weightkg) * .45359237
         file1 = open("shipment_log.txt","a")
-        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and kgs {} lbs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
+        file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and {} kgs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
         file1.close()
         print("Piece {} measures {} x {} x {} meters and kgs {} lbs".format(counter,lengthin,widthin,heightin,weightlb))
         number_of_pieces = int(number_of_pieces) - 1
