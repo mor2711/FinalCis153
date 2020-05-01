@@ -1,19 +1,19 @@
-import tkinter as tk
-from tkinter import *
-from datetime import date
+import tkinter as tk #imports tkinter to create GUI
+from tkinter import * #imports everything in tkinter
+from datetime import date #imports date so it can be added to shipment log
 today = date.today()
-d = today.strftime("%b-%d-%Y")
+d = today.strftime("%b-%d-%Y") #creates a variable of the date from the system in Jan-1-2020 format
 
-def chart(pieces,order):
-    Names = []
+def chart(pieces,order): #creates a chart for conversions based on piece count
+    Names = [] #creates a list to hold variable names
     count = 1
     counter1 = 1
     counter2 = 0
     pieces2 = pieces
-    for x in range(pieces*4):
+    for x in range(pieces*4): #creates the list of variable names neeeded to create the chart
         Names += ["e"+str(count)]
         count = count + 1
-    def convertustometric():
+    def convertustometric():#function to take user input and convert it from US to metric. It displays the conversions and writes it to the shipment log
         counter3 = 0
         counter4 = 1
         counter5 = 0
@@ -35,7 +35,7 @@ def chart(pieces,order):
             Label(Converter,text="{} KG".format(Names2[3+counter5])).grid(row=6 + counter5,column=2)
             counter5 = counter5 + 4
 
-    def convertmetrictous():
+    def convertmetrictous():#function to take user input and convert it from metric to US. It displays the conversions and writes it to the shipment log
         counter6 = 0
         counter7 = 1
         counter8 = 0
@@ -58,7 +58,7 @@ def chart(pieces,order):
             counter8 = counter8 + 4
 
 
-    while pieces2 > 0:
+    while pieces2 > 0:#creates the chart to enter measurmentrs based on piece count. Uses list created earlier so each text entry box has a unique name.
         Label(Converter,text="piece {} length".format(counter1)).grid(row=3 + counter2,column=0)
         Label(Converter,text="piece {} width".format(counter1)).grid(row=4 + counter2,column=0)
         Label(Converter,text="piece {} heigth".format(counter1)).grid(row=5 + counter2,column=0)
@@ -82,18 +82,18 @@ def chart(pieces,order):
         metrictous = Button(Converter,text="Convert Metric to US",command= lambda: convertmetrictous()).grid(row=2,column=0)
     return;
 
-Converter=tk.Tk()
-Converter.title("Measurement Converter")
-x=Label(Converter,text="Order Number").grid(row=0)
-y=Label(Converter,text="Number of pieces").grid(row=1)
-order_number = IntVar()
-pieces = IntVar()
-entry1 = Entry(Converter,textvariable=order_number)
-entry2 = Entry(Converter,textvariable=pieces)
-entry1.grid(row=0,column=1)
-entry2.grid(row=1,column=1)
+Converter=tk.Tk() #creates the main window
+Converter.title("Measurement Converter") #labels the main window
+x=Label(Converter,text="Order Number").grid(row=0) #creates a label for the ordernumber entry box and places it
+y=Label(Converter,text="Number of pieces").grid(row=1) #creates a label for the pieces entry box and places it
+order_number = IntVar() #creates a variable type for the order number
+pieces = IntVar() #creates a variable type for the piece count
+entry1 = Entry(Converter,textvariable=order_number) #creates a text entry box that corresponds to the order number variable
+entry2 = Entry(Converter,textvariable=pieces) #creates a text entry box that corresponds to the piece count
+entry1.grid(row=0,column=1) #places the order number entry box
+entry2.grid(row=1,column=1) #places the piece count entry box
 
 next = Button(Converter,text="next", command= lambda: chart(int(pieces.get()),int(order_number.get()))).grid(row=2,column=1)
-
+#this is a button that calls the chart funtion when clicked
 Converter.mainloop()
 

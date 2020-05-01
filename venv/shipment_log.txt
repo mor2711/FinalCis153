@@ -1,5 +1,2 @@
 
-Order Number 21 Date Apr-21-2020 Piece 1 measures 0.0254 x 0.0508 x 0.07619999999999999 meters and 1.81436948 kgs
-Order Number 21 Date Apr-21-2020 Piece 2 measures 0.127 x 0.15239999999999998 x 0.17779999999999999 meters and 3.62873896 kgs
-Order Number 21 Date Apr-21-2020 Piece 1 measures 0.0254 x 0.0508 x 0.07619999999999999 meters and 1.81436948 kgs
-Order Number 21 Date Apr-21-2020 Piece 2 measures 0.127 x 0.15239999999999998 x 0.17779999999999999 meters and 3.62873896 kgs
+
