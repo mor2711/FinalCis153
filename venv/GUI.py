@@ -51,10 +51,10 @@ def chart(pieces,order): #creates a chart for conversions based on piece count
             counter6 = counter6 + 4
             counter7 = counter7 + 1
         for x in range(pieces):
-            Label(Converter,text="{} meters".format(Names2[0+counter8])).grid(row=3 + counter5,column=2)
-            Label(Converter,text="{} meters".format(Names2[1+counter8])).grid(row=4 + counter5,column=2)
-            Label(Converter,text="{} meters".format(Names2[2+counter8])).grid(row=5 + counter5,column=2)
-            Label(Converter,text="{} KG".format(Names2[3+counter8])).grid(row=6 + counter5,column=2)
+            Label(Converter,text="{} meters".format(Names3[0+counter8])).grid(row=3 + counter8,column=2)
+            Label(Converter,text="{} meters".format(Names3[1+counter8])).grid(row=4 + counter8,column=2)
+            Label(Converter,text="{} meters".format(Names3[2+counter8])).grid(row=5 + counter8,column=2)
+            Label(Converter,text="{} KG".format(Names3[3+counter8])).grid(row=6 + counter8,column=2)
             counter8 = counter8 + 4
 
 

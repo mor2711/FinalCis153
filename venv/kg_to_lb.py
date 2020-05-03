@@ -30,18 +30,18 @@ def ustometric():#function to take user input and convert it from US to metric. 
     d = today.strftime("%b-%d-%Y")
     counter = 1
     while int(number_of_pieces) > 0:
-        lengthm = input("What is the length in ?".format(counter))
+        lengthm = input("What is the length in inches for piece {}?".format(counter))
         lengthin = float(lengthm) * .0254
-        widthm = input("What is the width in meters for piece {} ?".format(counter))
+        widthm = input("What is the width in inches for piece {} ?".format(counter))
         widthin = float(widthm) * .0254
-        heightm = input("What is the height in meters for piece {} ?".format(counter))
+        heightm = input("What is the height in inches for piece {} ?".format(counter))
         heightin = float(heightm) * .0254
-        weightkg = input("What is the weight in kgs for piece {} ?".format(counter))
+        weightkg = input("What is the weight in LBS for piece {} ?".format(counter))
         weightlb = float(weightkg) * .45359237
         file1 = open("shipment_log.txt","a")
         file1.write("Order Number {} Date {} Piece {} measures {} x {} x {} meters and {} kgs\n".format(order_number,d,counter,lengthin,widthin,heightin,weightlb))
         file1.close()
-        print("Piece {} measures {} x {} x {} meters and kgs {} lbs".format(counter,lengthin,widthin,heightin,weightlb))
+        print("Piece {} measures {} x {} x {} meters and weighs {} kgs".format(counter,lengthin,widthin,heightin,weightlb))
         number_of_pieces = int(number_of_pieces) - 1
         counter = counter + 1
     return;
